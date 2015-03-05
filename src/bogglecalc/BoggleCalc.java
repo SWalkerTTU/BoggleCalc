@@ -11,8 +11,7 @@ package bogglecalc;
  */
 public class BoggleCalc {
 
-//    private static final Set<Edge> edgeSet = ImmutableSet.of(
-    private static final Edge[] egdes = new Edge[]{
+    private static final Edge[] edges = new Edge[]{
         new Edge((byte) 0, (byte) 1),
         new Edge((byte) 0, (byte) 4),
         new Edge((byte) 0, (byte) 5),
@@ -56,35 +55,34 @@ public class BoggleCalc {
         new Edge((byte) 13, (byte) 14),
         new Edge((byte) 14, (byte) 15)
     };
-//    );
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        Sets.powerSet(edgeSet).parallelStream().filter(s -> s.size() != 15)
-//                .map((Set<Edge> s) -> {
-//                    byte[] valence = new byte[16];
-//                    s.parallelStream().map((e) -> {
-//                        valence[e.getNode1()]++;
-//                        return e;
-//                    }).forEach((Edge e) -> {
-//                        valence[e.getNode2()]++;
-//                    });
-//                    return new HashMap.SimpleImmutableEntry<byte[], Set<Edge>>(valence, s);
-//                }).filter((AbstractMap.SimpleImmutableEntry<byte[], Set<Edge>> e) -> {
-//                    byte[] valence = e.getKey();
-//                    for (byte w : valence) {
-//                        if (w > 2) {
+
+//        Iterator<int[]> edgePicker = CombinatoricsUtils.combinationsIterator(edges.length, 15);
+//
+//        StreamSupport.stream(Spliterators.spliteratorUnknownSize(edgePicker, 0), true)
+//                .filter((int[] arr) -> {
+//                    int[] valence = new int[16];
+////                    System.out.println(Arrays.toString(arr));
+//                    for (int b : arr) {
+//                        valence[edges[b].getNode1()]++;
+//                        valence[edges[b].getNode2()]++;
+//                    }
+//
+////                    System.out.println(Arrays.toString(valence));
+//                    for (int v : valence) {
+//                        if (v > 2) {
 //                            return false;
 //                        }
-//                        if (w < 1) {
+//                        if (v < 1) {
 //                            return false;
 //                        }
 //                    }
 //                    return true;
-//                }).map(e -> e.getValue()).limit(1000).forEach(System.out::println);
-
+//                }).limit(1000).forEach((int[] arr) -> System.out.println(Arrays.toString(arr)));
     }
 
 }
