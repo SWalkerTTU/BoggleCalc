@@ -45,4 +45,9 @@ public class Edge {
     byte getNode2() {
         return node2;
     }
+
+    @Override
+    public String toString() {
+        return node1 + "-" + node2;
+    }
 }
